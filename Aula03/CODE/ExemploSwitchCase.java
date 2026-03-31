@@ -10,6 +10,11 @@ void main() {
             0 - Sair.
             """;
     IO.println(menu);
+
+    double imc = 23.44444444;
+
+    IO.println(String.format("IMC: %.2f", imc));
+
     String opcaoStr = IO.readln("Digite uma opção: ");
     int opcao = Integer.parseInt(opcaoStr);
     switch (opcao) {
