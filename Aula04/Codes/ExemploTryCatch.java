@@ -7,7 +7,7 @@ void main() {
         // Sempre é executado, independente de exceção ou não
     }
 
-    IO.println("Resultado: " + divide(10, 0));
+    IO.println("Resultado: " + divide(10, 2));
 }
 
 int divide(int a, int b) {

@@ -14,6 +14,10 @@ void main() {
 			IO.println("i: "+ i);
             i++;
        	}
+
+        for (int j = 0; j < 3; j++) {
+			IO.println("j: "+ j);
+       	}
 }
 
 

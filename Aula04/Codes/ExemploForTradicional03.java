@@ -11,7 +11,11 @@ void main() {
                    observe que o Java é Case-Sensitive
         */
         
-		for (int i = 1; IO.readln().charAt(0) != 'S'; i++) {
+		for (int i = 1; !IO.readln().equals("S"); i++) {
+			IO.println("Já passou "+ i + " vezes");
+       	}
+
+        for (int i = 1; IO.readln().charAt(0) != 'S'; i++) {
 			IO.println("Já passou "+ i + " vezes");
        	}
 }

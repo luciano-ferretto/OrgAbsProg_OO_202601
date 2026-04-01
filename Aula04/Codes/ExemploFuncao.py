@@ -12,3 +12,7 @@ print(resultado)
 resultado = divide(10.0, 4.0)
 print(resultado)
 
+resultado = divide("10",4)
+
+
+

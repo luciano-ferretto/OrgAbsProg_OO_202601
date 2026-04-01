@@ -11,5 +11,11 @@ void main() {
         int sum = 5;
 		for (int i = 1; i <= 5; sum += ++i) ;
 		IO.println("O valor da variável sum é: " + sum);
+        //aqui o resultado vai ser 25
+
+        sum = 5;
+		for (int i = 1; i <= 5; sum += i++) ;
+		IO.println("O valor da variável sum é: " + sum);
+        //aqui o resultado vai ser 20
 }
 
