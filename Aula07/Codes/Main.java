@@ -34,12 +34,33 @@ void main() {
 }
 
 void cadastrar() throws Exception {
+
+    Livro teste = new Livro();
+    Livro teste2 = new Livro(null, null, 0, 0);
+
+
+
     String titulo = Input.scanString("Digite o título do livro: ");
     String autor = Input.scanString("Digite o autor do livro: ");
     int anoPublicacao = Input.scanInt("Digite o ano de publicação do livro: ");
     int numeroPaginas = Input.scanInt("Digite o número de páginas do livro: ");
 
-    Livro novoLivro = new Livro(titulo, autor, anoPublicacao, numeroPaginas);
+    int tipoLivro = Input.scanInt(
+        "Qual o tipo do livro: (1) Livro Físico; (2) Livro Digital: ");
+    Livro novoLivro;
+    if (tipoLivro == 1) {
+        int numeroExemplares = Input.scanInt("Digite o número de exemplares: ");
+        String dimensoes = Input.scanString("Digite as dimensões: ");
+
+        novoLivro = new LivroFisico(titulo, autor, anoPublicacao, numeroPaginas, numeroExemplares, dimensoes);
+    } else if (tipoLivro == 2) {
+        String formatoArquivo = Input.scanString("Digite o formato do arquivo: ");
+        double tamanhoArquivo = Input.scanDouble("Digite o tamanho do arquivo (MB): ");
+        
+        novoLivro= new LivroDigital(titulo, autor, anoPublicacao, numeroPaginas, tamanhoArquivo, formatoArquivo);
+    } else
+        throw new Exception("Tipo de livro inválido!");
+    
 
     service.cadastrar(novoLivro);
     
@@ -71,7 +92,7 @@ void imprimirLista(List<Livro> livros) {
 
     int i = 1;
     for (Livro livro : livros) {
-        IO.println(i++  + " - " + livro);
-        //IO.println(i++  + " - " + livro.toString());
+        //IO.println(i++  + " - " + livro);
+        IO.println(i++  + " - " + livro.toString());
     }
 }
