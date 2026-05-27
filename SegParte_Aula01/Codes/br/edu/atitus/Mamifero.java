@@ -1,3 +1,4 @@
+package br.edu.atitus;
 public abstract class Mamifero extends Animal {
 
     public Mamifero(String nome, Integer idade, Boolean temPelos) {

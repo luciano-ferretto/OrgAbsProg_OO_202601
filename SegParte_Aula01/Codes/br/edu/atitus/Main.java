@@ -1,9 +1,13 @@
+package br.edu.atitus;
 import java.util.ArrayList;
 import java.util.List;
 
+public class Main {
 void main() {
 
-    
+    IO.println("Zoo Digital");
+
+    IO.println("Números de Animais no Início: " + Animal.getContador());
 
     Animal toto = new Cachorro("Totó", 5);
     Animal ariel = new Gato("Ariel", 8);
@@ -24,4 +28,4 @@ void listarAnimais(List<Animal> animais) {
                         // Depende do tipo concreto do objeto
         animal.emitirSom();
     }
-}
+}}

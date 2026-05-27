@@ -1,7 +1,16 @@
+package br.edu.atitus;
 
 public abstract class Animal {
+    //Atributo Estático
+    // Pertence à classe
+    // Exite UMA vez só, e é compartilhado entre as instâncias
+    private static int contador = 0;
 
-    public final String VERSAO = "2.5";
+    public static int getContador() {
+        return contador;
+    }
+
+    public final String VERSAO_APP = "2.5";
     
     // Atributos
     private String nome;
@@ -13,6 +22,8 @@ public abstract class Animal {
         this.nome = nome; // Inicializa o atributo "nome" com o valor do parâmetro "nome"
         this.especie = especie;
         this.idade = idade;
+        //this.contador++; Não é uma boa prática
+        Animal.contador++;
     }
 
     // Métodos Gets e Sets
