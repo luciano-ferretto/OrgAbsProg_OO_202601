@@ -7,11 +7,12 @@ import java.time.format.DateTimeFormatter;
 
 public class SimuladorEmprestimoMonolitico {
 
-    
+    // CAMADA DE NEGÓCIO - A regra está misturada aqui (Juros fixos)
     private static final double TAXA_JUROS_FIXA = 0.05; // 5% ao mês
 
     public static void main(String[] args) {
         
+        // 1. CAMADA DE APRESENTAÇÃO (Interface de Usuário - CLI)
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("--- BEM-VINDO AO SISTEMA DE SIMULAÇÃO BANCÁRIA LEGADO ---");
@@ -41,6 +42,10 @@ public class SimuladorEmprestimoMonolitico {
         }
         
         scanner.close(); // Fecha o Scanner
+
+        // -----------------------------------------------------
+
+        // 2. CAMADA DE NEGÓCIO (Lógica de Cálculo)
         
         // Regra de Negócio: Calcula o valor total a ser pago
         double valorJuros = valorEmprestimo * TAXA_JUROS_FIXA * numParcelas;
@@ -57,6 +62,9 @@ public class SimuladorEmprestimoMonolitico {
         System.out.printf("Você pagará %d parcelas de R$ %.2f\n", numParcelas, valorParcela);
         System.out.println("------------------------------\n");
         
+        // -----------------------------------------------------
+
+        // 4. CAMADA DE DADOS/PERSISTÊNCIA (Salvar a Simulação em Arquivo)
         
         String nomeArquivo = "simulacao_emprestimo.txt";
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));

@@ -5,6 +5,7 @@ public class SimulacaoService {
     // A regra de negócio (Taxa) é definida aqui
     private static final double TAXA_JUROS_FIXA = 0.05; // 5% ao mês
 
+    //Esta classe/objeto DEPENDE de um objeto do tipo "SimulacaoRepository" para funcionar
     private final SimulacaoRepository repository;
 
     // Injeção de Dependência Manual (simulando o Spring)
